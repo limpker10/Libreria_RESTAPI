@@ -1,5 +1,6 @@
 package pe.edu.tecsup.bibliotecapi.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,11 +17,24 @@ public class Libro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @Column(name = "Titulo", nullable = false)
     private String titulo;
+
+    @Column(name = "Autor")
     private String autor;
+
+    @Column(name = "ISBN")
     private String isbn;
+
+    @Column(name = "Genero")
     private String genero;
+
+    @Column(name = "AnioPublicacion")
     private int anioPublicacion;
+
+    @Column(name = "Editorial")
     private String editorial;
+
+    @Column(name = "CantidadDisponible")
     private int cantidadDisponible;
 }
