@@ -24,9 +24,6 @@ import pe.edu.tecsup.bibliotecapi.services.LibroService;
 public class LibroController {
 	private static final Logger logger = LoggerFactory.getLogger(LibroController.class);
 
-	@Value("${app.storage.path}")
-	private String STORAGEPATH;
-
 	@Autowired
 	private LibroService libroService;
 
@@ -75,7 +72,7 @@ public class LibroController {
 		}
 	}
 
-	@DeleteMapping("/libros/{id}")
+	@DeleteMapping("/libro/{id}")
 	public ResponseEntity<String> eliminarLibro(@PathVariable Long id) {
 		try {
 			if (!libroService.existsById(id)) {
